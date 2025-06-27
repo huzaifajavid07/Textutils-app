@@ -6,16 +6,22 @@ function Alert(props) {
     return lower.charAt(0).toUpperCase() + lower.slice(1);
   };
   return (
-    <div style={{ height: "50px" }}>
-      {props.alert && (
-        <div
-          className={`alert alert-${props.alert.type} alert-dismissible fade show w-50 mx-auto`}
-          role="alert"
-        >
-          <strong>{capitalize(props.alert.type)}</strong>: {props.alert.msg}
-        </div>
-      )}
+    <div className="container d-flex justify-content-center my-2">
+  {props.alert && (
+    <div
+      className={`alert alert-${props.alert.type} alert-dismissible fade show w-100 w-md-75 w-lg-50 text-center`}
+      role="alert"
+      style={{
+        fontSize: '1rem',
+        padding: '10px 20px',
+        maxWidth: '400px'
+      }}
+    >
+      <strong>{capitalize(props.alert.type)}:</strong> {props.alert.msg}
     </div>
+  )}
+</div>
+
   );
 }
 

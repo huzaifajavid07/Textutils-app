@@ -56,6 +56,7 @@ export default function TextForm(props) {
   const wordCount = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
   return (
     <>
+    
       <div
         className="container"
         style={{ color: props.mode === "dark" ? "white" : "#042743" }}
@@ -125,7 +126,7 @@ export default function TextForm(props) {
         className="container my-4"
         style={{ color: props.mode === "dark" ? "white" : "#042743" }}
       >
-        <h2>Your Text Summary here</h2>
+        <h2>Your Text Summary</h2>
         <p>
           {wordCount} Words and {text.replace(/\s/g, "").length} Character
         </p>
@@ -136,7 +137,7 @@ export default function TextForm(props) {
             }).length}{" "}
           Mintues to Read
         </p>
-        <h2>Click to Preview Text</h2>
+        <h2>Preview Text</h2>
         <p>
           {text.length > 0
             ? text
