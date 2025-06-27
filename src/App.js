@@ -22,6 +22,7 @@ function App() {
       }, 2000);
   }
   
+  
 
     const toggleMode = ()=>{
     if(mode === 'light'){
@@ -53,7 +54,7 @@ function App() {
           <Route path="/home" element={
             <TextForm
               showAlert={showAlert}
-              heading="Try TextUtils - word counter, character counter, remove extra spaces"
+              heading="Try TextUtils - Word Mind"
               mode={mode}
             />
           } />

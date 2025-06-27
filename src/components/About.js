@@ -1,55 +1,69 @@
-// import React from "react";
-import React, { useState } from 'react';
+import React from "react";
+// import React, { useState } from 'react';
+import { useEffect } from 'react';
 
 // let myStyle = {
 //    color : 'white',
 //    backgroundColor : 'black'
 // }
 
-
 export default function About(props) {
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "#042743",
+    backgroundColor: props.mode === "dark" ? "rgb(36 74 104)" : "white",
+  };
 
-    const[btntext, setbtntext] =  useState("Enable Dark Mode")
+   useEffect(() => {
+    document.title = "About - TextUtils";
+  }, []);
 
+  // let setborder = {
+  //   borderRadius: props.mode === "dark" ? "10px" : "",
+  //   paddingBottom: props.mode === "dark" ? "23px" : "",
+  //   paddingTop: props.mode === "dark" ? "23px" : "",
+  // };
 
-     const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white'
-    }) 
+  // const[btntext, setbtntext] =  useState("Enable Dark Mode")
+
+  //  const [myStyle, setMyStyle] = useState({
+  //     color: 'black',
+  //     backgroundColor: 'white'
+  // })
 
   // let myStyle = {
   //   color: props.mode === "dark" ? "white" : "#042743",
   //   backgroundColor: props.mode === "dark" ? "rgb(36 74 104)" : "white",
   // };
 
-    let toggleStyle = ()=>{
-        if(myStyle.color === 'black'){
-           setMyStyle({
-            color: 'white',
-        backgroundColor: 'black',
-        border : '1px solid white'
-           })
-           setbtntext("Enable Light mode")
-        }
-        else{
-          setMyStyle({
-             color: 'black',
-        backgroundColor: 'white'
-          })
-          setbtntext("Enable Dark Mode")
-        }
-    }
+  // let toggleStyle = ()=>{
+  //     if(myStyle.color === 'black'){
+  //        setMyStyle({
+  //         color: 'white',
+  //     backgroundColor: 'black',
+  //     border : '1px solid white'
+  //        })
+  //        setbtntext("Enable Light mode")
+  //     }
+  //     else{
+  //       setMyStyle({
+  //          color: 'black',
+  //     backgroundColor: 'white'
+  //       })
+  //       setbtntext("Enable Dark Mode")
+  //     }
 
   return (
     <>
-      <div className="container" style={myStyle}>
-        <h1
-          className="my-3"
-          // style={{ color: props.mode === "dark" ? "white" : "#042743" }}
-          // style={myStyle}
-        >
-          About Us
-        </h1>
+      <h1
+        className="my-3"
+        style={{
+          color: props.mode === "dark" ? "white" : "#042743",
+          paddingLeft: "18px",
+        }}
+      >
+        About Us
+      </h1>
+      <div className="container">
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">
@@ -134,11 +148,11 @@ export default function About(props) {
             </div>
           </div>
         </div>
-        <div className="container my-3">
+        {/* <div className="container my-3">
           <button onClick={toggleStyle} type="button" className="btn btn-primary">
             {btntext}
           </button>
-        </div>
+        </div> */}
       </div>
     </>
   );
